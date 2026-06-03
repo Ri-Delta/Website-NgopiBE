@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="NgopiBE — Tempat tongkrongan, gaming house, dan komunitas terbaik. Ngopi, main, hangout bareng!" />
+  <title>NgopiBE | Ngopi Bareng Esport</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Orbitron:wght@400;700;900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+
+  <!-- ── CURSOR GLOW ── -->
+  <div id="cursor-glow" aria-hidden="true"></div>
+
+  <!-- ── PARTICLES ── -->
+  <div id="particles-container" aria-hidden="true"></div>
+
+  <!-- ── NAVBAR ── -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" id="nav-logo-link">
+        <span class="logo-icon">☕</span>
+        <span class="logo-text">Ngopi<span class="logo-accent">BE</span></span>
+      </a>
+      <ul class="nav-links" id="nav-links-list">
+        <li><a href="#home" class="nav-link active" id="nav-home">Home</a></li>
+        <li><a href="#about" class="nav-link" id="nav-about">About</a></li>
+        <li><a href="#founders" class="nav-link" id="nav-founders">Founders</a></li>
+        <li><a href="#members" class="nav-link" id="nav-members">Member</a></li>
+        <li><a href="#gaming-house" class="nav-link" id="nav-gh">Gaming House</a></li>
+        <li><a href="#schedule" class="nav-link" id="nav-schedule">Schedule</a></li>
+        <li><a href="#gallery" class="nav-link" id="nav-gallery">Galeri</a></li>
+        <li><a href="#socials" class="nav-link" id="nav-socials">Sosmed</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle-btn" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO SECTION ── -->
+  <section id="home" class="hero-section">
+
+    <!-- Background -->
+    <div class="hero-bg-overlay"></div>
+    <img src="assets/images/hero-bg.png" alt="NgopiBE Background" class="hero-bg-img" />
+
+    <!-- TOP MARQUEE TICKER -->
+    <div class="hero-ticker hero-ticker--top" aria-hidden="true">
+      <div class="ticker-track">
+        <span>NGOPI BARENG</span><span class="ticker-dot">✦</span>
+        <span>GAMING HOUSE</span><span class="ticker-dot">✦</span>
+        <span>PALEMBANG JAYA</span><span class="ticker-dot">✦</span>
+        <span>SQUAD SOLID</span><span class="ticker-dot">✦</span>
+        <span>EST. 2020</span><span class="ticker-dot">✦</span>
+        <span>NGOPI BARENG</span><span class="ticker-dot">✦</span>
+        <span>GAMING HOUSE</span><span class="ticker-dot">✦</span>
+        <span>PALEMBANG JAYA</span><span class="ticker-dot">✦</span>
+        <span>SQUAD SOLID</span><span class="ticker-dot">✦</span>
+        <span>EST. 2020</span><span class="ticker-dot">✦</span>
+        <span>NGOPI BARENG</span><span class="ticker-dot">✦</span>
+        <span>GAMING HOUSE</span><span class="ticker-dot">✦</span>
+      </div>
+    </div>
+
+    <!-- MAIN HERO CONTENT -->
+    <div class="hero-center">
+
+      <!-- Left Label -->
+      <div class="hero-label-left" id="hero-label-left">
+        <div class="hero-org-logo">
+          <span class="org-icon">☕</span>
+          <div class="org-text">
+            <span class="org-name">NgopiBE</span>
+            <span class="org-sub">Gaming Community</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Big Title -->
+      <div class="hero-title-wrap" id="hero-main-title">
+        <div class="hero-big-number" aria-hidden="true">BE</div>
+        <h1 class="hero-main-text">
+          <span class="hmt-line hmt-top">NGOPI</span>
+          <span class="hmt-line hmt-accent">BARENG</span>
+          <span class="hmt-line hmt-bottom">ESPORT</span>
+        </h1>
+      </div>
+
+      <!-- Right Label -->
+      <div class="hero-label-right" id="hero-label-right">
+        <span class="hero-versus">—</span>
+        <div class="hero-right-info">
+          <span class="hero-vs-label">VERSUS</span>
+          <span class="hero-vs-name">THE WORLD</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Character image center -->
+    <div class="hero-char-wrap" id="hero-char-wrap" aria-hidden="true">
+      <img src="assets/images/hero-char.png" alt="" class="hero-char-img" />
+      <div class="hero-char-glow"></div>
+    </div>
+
+    <!-- BOTTOM BAR -->
+    <div class="hero-bottom-bar" id="hero-bottom-bar">
+      <div class="hbb-left">
+        <div class="hbb-stat">
+          <span class="hbb-num" data-target="12">0</span>
+          <span class="hbb-lbl">Member</span>
+        </div>
+        <div class="hbb-divider"></div>
+        <div class="hbb-stat">
+          <span class="hbb-num" data-target="3">0</span>
+          <span class="hbb-lbl">Founders</span>
+        </div>
+        <div class="hbb-divider"></div>
+        <div class="hbb-stat">
+          <span class="hbb-num" data-target="1">0</span>
+          <span class="hbb-lbl">Gaming House</span>
+        </div>
+      </div>
+      <div class="hbb-right">
+        <a href="#founders" class="hbb-btn" id="hero-cta-founders">Kenalan Yuk →</a>
+        <a href="#gaming-house" class="hbb-btn hbb-btn--ghost" id="hero-cta-gh">Lihat GH</a>
+      </div>
+    </div>
+
+    <!-- BOTTOM MARQUEE TICKER -->
+    <div class="hero-ticker hero-ticker--bottom" aria-hidden="true">
+      <div class="ticker-track ticker-track--reverse">
+        <span>SATU SQUAD</span><span class="ticker-dot">✦</span>
+        <span>SATU RUMAH</span><span class="ticker-dot">✦</span>
+        <span>NGOPI DULU</span><span class="ticker-dot">✦</span>
+        <span>RANKED BARENG</span><span class="ticker-dot">✦</span>
+        <span>NONGKRONG ASIK</span><span class="ticker-dot">✦</span>
+        <span>SATU SQUAD</span><span class="ticker-dot">✦</span>
+        <span>SATU RUMAH</span><span class="ticker-dot">✦</span>
+        <span>NGOPI DULU</span><span class="ticker-dot">✦</span>
+        <span>RANKED BARENG</span><span class="ticker-dot">✦</span>
+        <span>NONGKRONG ASIK</span><span class="ticker-dot">✦</span>
+        <span>SATU SQUAD</span><span class="ticker-dot">✦</span>
+        <span>SATU RUMAH</span><span class="ticker-dot">✦</span>
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- ── ABOUT SECTION ── -->
+  <section id="about" class="about-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Tentang Kita</span>
+        <h2 class="section-title" id="about-title">Siapa <span class="accent">NgopiBE</span>?</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card" id="about-card-1">
+          <div class="about-icon">☕</div>
+          <h3>Ngopi Dulu</h3>
+          <p>Semua diawali dari secangkir kopi dan obrolan santai. Kami percaya ide terbaik lahir dari tongkrongan yang
+            tepat.</p>
+        </div>
+        <div class="about-card" id="about-card-2">
+          <div class="about-icon">🎮</div>
+          <h3>Gaming Bareng</h3>
+          <p>Dari ranked bareng sampe turnamen lokal, NgopiBE hadir sebagai squad yang solid, kompak, dan penuh
+            semangat.</p>
+        </div>
+        <div class="about-card" id="about-card-3">
+          <div class="about-icon">🔥</div>
+          <h3>Vibes Kita</h3>
+          <p>Bukan cuma gaming house, tapi rumah kedua buat nongkrong, ngerekrut teman baru, dan ngebangun kenangan
+            bareng.</p>
+        </div>
+      </div>
+      <div class="about-quote-block" id="about-quote">
+        <div class="quote-mark">"</div>
+        <blockquote>Dari segelas kopi lahirlah satu keluarga — NgopiBE bukan sekadar kelompok, ini rumah kita bersama.
+        </blockquote>
+        <cite>— The Founders</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOUNDERS SECTION ── -->
+  <section id="founders" class="founders-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">The Brain</span>
+        <h2 class="section-title" id="founders-title">Para <span class="accent">Founders</span></h2>
+        <p class="section-desc">Tiga orang yang memberanikan diri bikin tongkrongan ini nyata.</p>
+      </div>
+      <div class="founders-grid" id="founders-grid">
+
+        <div class="founder-card" id="founder-card-1">
+          <div class="founder-card-inner">
+            <div class="founder-img-wrap">
+              <img src="assets/images/founder1.png" alt="Founder 1 NgopiBE" class="founder-img" />
+              <div class="founder-glow"></div>
+            </div>
+            <div class="founder-rank">Founder #01</div>
+            <h3 class="founder-name">Rizky "RIZY" Pratama</h3>
+            <p class="founder-role">CEO & Main Fragger</p>
+            <p class="founder-bio">Otak di balik NgopiBE. Kalo ada masalah, Rizy yang nyariin solusinya sambil ngopi.
+            </p>
+            <div class="founder-games">
+              <span class="game-tag">Mobile Legends</span>
+              <span class="game-tag">PUBG</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="founder-card featured" id="founder-card-2">
+          <div class="founder-badge-top">⭐ CO-FOUNDER</div>
+          <div class="founder-card-inner">
+            <div class="founder-img-wrap">
+              <img src="assets/images/founder2.png" alt="Founder 2 NgopiBE" class="founder-img" />
+              <div class="founder-glow"></div>
+            </div>
+            <div class="founder-rank">Founder #02</div>
+            <h3 class="founder-name">Bagas "BAGA" Nugraha</h3>
+            <p class="founder-role">Strategy Lead & IGL</p>
+            <p class="founder-bio">Jago nge-strategi, baik di game maupun urusan tongkrongan. Semua plan dari dia.</p>
+            <div class="founder-games">
+              <span class="game-tag">Free Fire</span>
+              <span class="game-tag">Valorant</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="founder-card" id="founder-card-3">
+          <div class="founder-card-inner">
+            <div class="founder-img-wrap">
+              <img src="assets/images/founder3.png" alt="Founder 3 NgopiBE" class="founder-img" />
+              <div class="founder-glow"></div>
+            </div>
+            <div class="founder-rank">Founder #03</div>
+            <h3 class="founder-name">Evan "EVN" Santoso</h3>
+            <p class="founder-role">Tech & Support Lead</p>
+            <p class="founder-bio">Yang ngurusin semua hal teknis, dari WiFi GH sampe bikin website ini. Diem tapi
+              produktif.</p>
+            <div class="founder-games">
+              <span class="game-tag">Genshin Impact</span>
+              <span class="game-tag">CS2</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MEMBERS SECTION ── -->
+  <section id="members" class="members-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">The Squad</span>
+        <h2 class="section-title" id="members-title">Member <span class="accent">NgopiBE</span></h2>
+        <p class="section-desc">Semua anggota yang bikin tongkrongan ini makin hidup dan seru.</p>
+      </div>
+      <div class="members-grid" id="members-grid">
+        <!-- Member cards generated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GAMING HOUSE SECTION ── -->
+  <section id="gaming-house" class="gh-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Markas Kita</span>
+        <h2 class="section-title" id="gh-title">Gaming <span class="accent">House</span></h2>
+        <p class="section-desc">Rumah kedua kita — tempat semua kegilaan dimulai.</p>
+      </div>
+      <div class="gh-content">
+        <div class="gh-image-wrap" id="gh-image-wrap">
+          <img src="assets/images/gh-location.png" alt="NgopiBE Gaming House Interior" class="gh-img" />
+          <div class="gh-img-overlay">
+            <span class="gh-live-badge"><span class="live-dot"></span> LIVE NOW</span>
+          </div>
+        </div>
+        <div class="gh-info" id="gh-info">
+          <div class="gh-tag">📍 Lokasi Resmi</div>
+          <h3 class="gh-name">GH NgopiBE HQ</h3>
+          <p class="gh-address">Jl. Nongkrong Asik No. 69, Bandung Timur, Jawa Barat</p>
+          <div class="gh-features">
+            <div class="gh-feature" id="gh-feat-1">
+              <span class="feature-icon">🖥️</span>
+              <div>
+                <strong>12 PC Gaming</strong>
+                <span>Spec tinggi, FPS maximal</span>
+              </div>
+            </div>
+            <div class="gh-feature" id="gh-feat-2">
+              <span class="feature-icon">☕</span>
+              <div>
+                <strong>Coffee Corner</strong>
+                <span>Kopi, snack, dan minuman segar</span>
+              </div>
+            </div>
+            <div class="gh-feature" id="gh-feat-3">
+              <span class="feature-icon">📡</span>
+              <div>
+                <strong>Internet 1Gbps</strong>
+                <span>Fiber optic, zero lag</span>
+              </div>
+            </div>
+            <div class="gh-feature" id="gh-feat-4">
+              <span class="feature-icon">🎙️</span>
+              <div>
+                <strong>Streaming Setup</strong>
+                <span>Ready untuk content creator</span>
+              </div>
+            </div>
+          </div>
+          <div class="gh-hours">
+            <div class="hours-item">
+              <span>Senin – Jumat</span>
+              <span class="hours-time">15:00 – 23:00</span>
+            </div>
+            <div class="hours-item">
+              <span>Sabtu – Minggu</span>
+              <span class="hours-time">10:00 – 02:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SCHEDULE SECTION ── -->
+  <section id="schedule" class="schedule-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Kegiatan Rutin</span>
+        <h2 class="section-title" id="schedule-title">Jadwal <span class="accent">NgopiBE</span></h2>
+        <p class="section-desc">Dari hari Senin sampai Minggu, selalu ada kegiatan seru buat kalian.</p>
+      </div>
+      <div class="schedule-week" id="schedule-week">
+        <!-- Schedule cards generated by JS -->
+      </div>
+      <div class="schedule-legend">
+        <div class="legend-item"><span class="legend-dot gaming"></span> Gaming</div>
+        <div class="legend-item"><span class="legend-dot social"></span> Social</div>
+        <div class="legend-item"><span class="legend-dot coffee"></span> Ngopi</div>
+        <div class="legend-item"><span class="legend-dot tournament"></span> Turnamen</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GALLERY SECTION ── -->
+  <section id="gallery" class="gallery-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Moments</span>
+        <h2 class="section-title" id="gallery-title">Galeri <span class="accent">NgopiBE</span></h2>
+        <p class="section-desc">Kenangan yang tersimpan — dari sesi gaming sampai kopi tengah malam.</p>
+      </div>
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Gallery items generated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SOCIAL MEDIA SECTION ── -->
+  <section id="socials" class="socials-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Connect With Us</span>
+        <h2 class="section-title" id="socials-title">Temuin Kita di <span class="accent">Sosmed</span></h2>
+        <p class="section-desc">Follow, join, dan stay connected bareng NgopiBE di semua platform!</p>
+      </div>
+      <div class="socials-grid" id="socials-grid">
+
+        <!-- Discord -->
+        <div class="social-card discord-card reveal" id="social-discord">
+          <div class="social-card-header">
+            <div class="social-icon-wrap discord">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="social-svg" aria-hidden="true">
+                <path
+                  d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.956-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.419 2.157-2.419 1.21 0 2.176 1.096 2.157 2.42 0 1.333-.946 2.418-2.157 2.418z" />
+              </svg>
+            </div>
+            <div class="social-platform-info">
+              <span class="platform-name">Discord Server</span>
+              <span class="platform-handle">NgopiBE Community</span>
+            </div>
+          </div>
+          <div class="social-card-body">
+            <p class="social-desc">Server resmi NgopiBE! Ada channel buat ngobrol, cari party, share gameplay, dan info
+              turnamen terbaru. Join sekarang dan dapet role Member!</p>
+            <div class="social-stats">
+              <div class="sstat-item">
+                <span class="sstat-num">247</span>
+                <span class="sstat-lbl">Members</span>
+              </div>
+              <div class="sstat-item">
+                <span class="sstat-num">12</span>
+                <span class="sstat-lbl">Channels</span>
+              </div>
+              <div class="sstat-item">
+                <span class="sstat-num">🟢</span>
+                <span class="sstat-lbl">Online</span>
+              </div>
+            </div>
+          </div>
+          <a href="https://discord.gg/ngopibe" target="_blank" rel="noopener" id="btn-discord"
+            class="social-cta-btn discord-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+              <path
+                d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z" />
+            </svg>
+            Join Discord Server
+          </a>
+        </div>
+
+        <!-- Instagram -->
+        <div class="social-card instagram-card reveal reveal-delay-1" id="social-instagram">
+          <div class="social-card-header">
+            <div class="social-icon-wrap instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="social-svg" aria-hidden="true">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+              </svg>
+            </div>
+            <div class="social-platform-info">
+              <span class="platform-name">Instagram</span>
+              <span class="platform-handle">@ngopibe_gg</span>
+            </div>
+          </div>
+          <div class="social-card-body">
+            <p class="social-desc">Konten gaming, foto nongkrong, highlight gameplay, dan behind the scenes kehidupan
+              squad NgopiBE sehari-hari. Update tiap hari!</p>
+            <div class="social-stats">
+              <div class="sstat-item">
+                <span class="sstat-num">1.2K</span>
+                <span class="sstat-lbl">Followers</span>
+              </div>
+              <div class="sstat-item">
+                <span class="sstat-num">89</span>
+                <span class="sstat-lbl">Posts</span>
+              </div>
+              <div class="sstat-item">
+                <span class="sstat-num">156</span>
+                <span class="sstat-lbl">Following</span>
+              </div>
+            </div>
+          </div>
+          <a href="https://instagram.com/ngopibe_gg" target="_blank" rel="noopener" id="btn-instagram"
+            class="social-cta-btn instagram-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+              <path
+                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+            </svg>
+            Follow di Instagram
+          </a>
+        </div>
+
+        <!-- Facebook -->
+        <div class="social-card facebook-card reveal reveal-delay-2" id="social-facebook">
+          <div class="social-card-header">
+            <div class="social-icon-wrap facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="social-svg" aria-hidden="true">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </div>
+            <div class="social-platform-info">
+              <span class="platform-name">Facebook</span>
+              <span class="platform-handle">NgopiBE Official</span>
+            </div>
+          </div>
+          <div class="social-card-body">
+            <p class="social-desc">Halaman Facebook NgopiBE buat info event, jadwal turnamen, pengumuman rekrut member
+              baru, dan komunitas yang lebih luas.</p>
+            <div class="social-stats">
+              <div class="sstat-item">
+                <span class="sstat-num">834</span>
+                <span class="sstat-lbl">Likes</span>
+              </div>
+              <div class="sstat-item">
+                <span class="sstat-num">912</span>
+                <span class="sstat-lbl">Followers</span>
+              </div>
+              <div class="sstat-item">
+                <span class="sstat-num">4.8⭐</span>
+                <span class="sstat-lbl">Rating</span>
+              </div>
+            </div>
+          </div>
+          <a href="https://facebook.com/ngopibe" target="_blank" rel="noopener" id="btn-facebook"
+            class="social-cta-btn facebook-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+              <path
+                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+            </svg>
+            Like di Facebook
+          </a>
+        </div>
+
+        <!-- Twitter / X -->
+        <div class="social-card twitter-card reveal reveal-delay-3" id="social-twitter">
+          <div class="social-card-header">
+            <div class="social-icon-wrap twitter">
+              <svg viewBox="0 0 24 24" fill="currentColor" class="social-svg" aria-hidden="true">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </div>
+            <div class="social-platform-info">
+              <span class="platform-name">Twitter / X</span>
+              <span class="platform-handle">@NgopiBE_gg</span>
+            </div>
+          </div>
+          <div class="social-card-body">
+            <p class="social-desc">Update real-time, hot take gaming, live tweet saat turnamen, dan obrolan santai squad
+              NgopiBE. Aktif setiap hari, gak pernah sepi!</p>
+            <div class="social-stats">
+              <div class="sstat-item">
+                <span class="sstat-num">587</span>
+                <span class="sstat-lbl">Followers</span>
+              </div>
+              <div class="sstat-item">
+                <span class="sstat-num">1.4K</span>
+                <span class="sstat-lbl">Tweets</span>
+              </div>
+              <div class="sstat-item">
+                <span class="sstat-num">320</span>
+                <span class="sstat-lbl">Following</span>
+              </div>
+            </div>
+          </div>
+          <a href="https://twitter.com/NgopiBE_gg" target="_blank" rel="noopener" id="btn-twitter"
+            class="social-cta-btn twitter-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+              <path
+                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+            </svg>
+            Follow di X
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer" id="main-footer">
+    <div class="footer-glow"></div>
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="footer-logo">☕ NgopiBE</div>
+          <p>Ngopi, Gaming, Nongkrong.<br />Satu squad, satu rumah.</p>
+          <div class="footer-socials">
+            <a href="https://discord.gg/ngopibe" target="_blank" rel="noopener" id="footer-dc" class="social-link"
+              aria-label="Discord">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path
+                  d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z" />
+              </svg>
+            </a>
+            <a href="https://instagram.com/ngopibe_gg" target="_blank" rel="noopener" id="footer-ig" class="social-link"
+              aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path
+                  d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
+              </svg>
+            </a>
+            <a href="https://facebook.com/ngopibe" target="_blank" rel="noopener" id="footer-fb" class="social-link"
+              aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+              </svg>
+            </a>
+            <a href="https://twitter.com/NgopiBE_gg" target="_blank" rel="noopener" id="footer-tw" class="social-link"
+              aria-label="Twitter/X">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                <path
+                  d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer-links-col">
+          <h4>Navigasi</h4>
+          <ul>
+            <li><a href="#home" id="foot-nav-home">Home</a></li>
+            <li><a href="#about" id="foot-nav-about">About</a></li>
+            <li><a href="#founders" id="foot-nav-founders">Founders</a></li>
+            <li><a href="#members" id="foot-nav-members">Member</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Info</h4>
+          <ul>
+            <li><a href="#gaming-house" id="foot-nav-gh">Gaming House</a></li>
+            <li><a href="#schedule" id="foot-nav-sched">Jadwal</a></li>
+            <li><a href="#gallery" id="foot-nav-gal">Galeri</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4>Join Us</h4>
+          <p>Mau jadi bagian dari NgopiBE?</p>
+          <div class="newsletter-form">
+            <input type="text" id="join-name-input" placeholder="Username kamu..." aria-label="Username" />
+            <button id="join-submit-btn" type="button">JOIN</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2024 <strong>NgopiBE</strong> · All Rights Reserved · Made with ☕ & 💚</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ── BACK TO TOP ── -->
+  <button id="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+  <!-- ── TOAST ── -->
+  <div id="toast-notification" class="toast" role="alert" aria-live="polite"></div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+
+</html>
