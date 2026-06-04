@@ -2,11 +2,11 @@
   "schedule": [
     {
       "day": "Senin",
-      "short": "SEN",
+      "short": "Privat",
       "events": [
         {
-          "time": "20:01",
-          "label": "Ngopi Bareng",
+          "time": "13:00",
+          "label": "Rapat Internal",
           "type": "social"
         }
       ]
