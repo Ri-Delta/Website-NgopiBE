@@ -299,6 +299,7 @@ const galleryItems = [
   { emoji: '🔥', label: 'War Malam', sub: 'Squad Match · Feb 2024', cls: '' },
   { emoji: '🤝', label: 'Gathering Squad', sub: 'Bulanan · Apr 2024', cls: 'span-2' },
   { src: 'assets/images/coffee-vibes.png', label: 'Coffee & Game', sub: 'GH NgopiBE · Rutin', cls: '' },
+  { emoji: '🍕', label: 'Makan Bareng', sub: 'Syukuran · Mei 2024', cls: '' },
 ];
 
 function renderGallery() {
