@@ -203,67 +203,18 @@ async function renderMembers() {
 renderMembers();
 
 /* ══════════════════════════════════════════════
-   7. SCHEDULE DATA & RENDER
+   7. SCHEDULE RENDER
 ══════════════════════════════════════════════ */
-const scheduleData = [
-  {
-    day: 'Senin', short: 'SEN',
-    events: [
-      { time: '16:00', label: 'Ranked Session', type: 'gaming' },
-      { time: '20:00', label: 'Ngopi Bareng', type: 'coffee' },
-    ]
-  },
-  {
-    day: 'Selasa', short: 'SEL',
-    events: [
-      { time: '15:00', label: 'Latihan Aim', type: 'gaming' },
-      { time: '19:00', label: 'Review Gameplay', type: 'gaming' },
-    ]
-  },
-  {
-    day: 'Rabu', short: 'RAB',
-    events: [
-      { time: '16:00', label: 'Scrim Internal', type: 'gaming' },
-      { time: '21:00', label: 'Diskusi Strategi', type: 'social' },
-    ]
-  },
-  {
-    day: 'Kamis', short: 'KAM',
-    events: [
-      { time: '15:00', label: 'Free Play', type: 'gaming' },
-      { time: '20:00', label: 'Nongkrong GH', type: 'social' },
-    ]
-  },
-  {
-    day: "Jum'at", short: 'JUM',
-    events: [
-      { time: '18:00', label: 'War Friday', type: 'tournament' },
-      { time: '22:00', label: 'Ngopi Malam', type: 'coffee' },
-    ]
-  },
-  {
-    day: 'Sabtu', short: 'SAB',
-    events: [
-      { time: '10:00', label: 'Open House GH', type: 'social' },
-      { time: '13:00', label: 'Turnamen Mini', type: 'tournament' },
-      { time: '19:00', label: 'Gathering', type: 'social' },
-    ]
-  },
-  {
-    day: 'Minggu', short: 'MIN',
-    events: [
-      { time: '11:00', label: 'Brunch & Game', type: 'coffee' },
-      { time: '14:00', label: 'Turnamen Online', type: 'tournament' },
-      { time: '20:00', label: 'Review Week', type: 'social' },
-    ]
-  },
-];
-
-function renderSchedule() {
+async function renderSchedule() {
   const container = $('#schedule-week');
   if (!container) return;
 
-  const today = new Date().getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
+  try {
+    const res = await fetch('assets/data/schedule.json');
+    const data = await res.json();
+    const scheduleData = data.schedule || [];
+
+    const today = new Date().getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
   // Map our schedule order: index 0=Mon ... 5=Sat, 6=Sun
   const todayIdx = today === 0 ? 6 : today - 1;
 

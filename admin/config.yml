@@ -24,3 +24,28 @@ collections:
               - {label: "Game Favorit", name: "game", widget: "string"}
               - {label: "Emoji", name: "emoji", widget: "string"}
               - {label: "Status Online?", name: "online", widget: "boolean", default: false}
+
+  - name: "schedule"
+    label: "Schedule Data"
+    files:
+      - file: "assets/data/schedule.json"
+        name: "schedule_list"
+        label: "Jadwal Mingguan NgopiBE"
+        description: "Atur jadwal harian squad"
+        fields:
+          - name: "schedule"
+            label: "Jadwal"
+            widget: "list"
+            fields:
+              - {label: "Hari", name: "day", widget: "string"}
+              - {label: "Singkatan Hari (3 Huruf)", name: "short", widget: "string"}
+              - name: "events"
+                label: "Kegiatan"
+                widget: "list"
+                fields:
+                  - {label: "Jam (HH:MM)", name: "time", widget: "string"}
+                  - {label: "Nama Kegiatan", name: "label", widget: "string"}
+                  - label: "Tipe Kegiatan"
+                    name: "type"
+                    widget: "select"
+                    options: ["gaming", "social", "coffee", "tournament"]
