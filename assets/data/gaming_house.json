@@ -1,0 +1,36 @@
+{
+  "name": "GH NgopiBE HQ",
+  "address": "Jl. Nongkrong Asik No. 69, Bandung Timur, Jawa Barat",
+  "features": [
+    {
+      "icon": "🖥️",
+      "title": "12 PC Gaming",
+      "desc": "Spec tinggi, FPS maximal"
+    },
+    {
+      "icon": "☕",
+      "title": "Coffee Corner",
+      "desc": "Kopi, snack, dan minuman segar"
+    },
+    {
+      "icon": "📡",
+      "title": "Internet 1Gbps",
+      "desc": "Fiber optic, zero lag"
+    },
+    {
+      "icon": "🎙️",
+      "title": "Streaming Setup",
+      "desc": "Ready untuk content creator"
+    }
+  ],
+  "hours": [
+    {
+      "day": "Senin – Jumat",
+      "time": "15:00 – 23:00"
+    },
+    {
+      "day": "Sabtu – Minggu",
+      "time": "10:00 – 02:00"
+    }
+  ]
+}

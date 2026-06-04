@@ -244,7 +244,51 @@ async function renderSchedule() {
 renderSchedule();
 
 /* ══════════════════════════════════════════════
-   8. GALLERY RENDER
+   8. GAMING HOUSE RENDER
+══════════════════════════════════════════════ */
+async function renderGamingHouse() {
+  const ghName = $('#gh-name');
+  const ghAddress = $('#gh-address');
+  const featuresContainer = $('#gh-features-container');
+  const hoursContainer = $('#gh-hours-container');
+
+  if (!ghName || !ghAddress || !featuresContainer || !hoursContainer) return;
+
+  try {
+    const res = await fetch('assets/data/gaming_house.json');
+    const ghData = await res.json();
+
+    ghName.textContent = ghData.name || 'GH NgopiBE HQ';
+    ghAddress.textContent = ghData.address || '';
+
+    if (ghData.features) {
+      featuresContainer.innerHTML = ghData.features.map((feat, i) => `
+        <div class="gh-feature" id="gh-feat-${i + 1}">
+          <span class="feature-icon">${feat.icon}</span>
+          <div>
+            <strong>${feat.title}</strong>
+            <span>${feat.desc}</span>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    if (ghData.hours) {
+      hoursContainer.innerHTML = ghData.hours.map(hour => `
+        <div class="hours-item">
+          <span>${hour.day}</span>
+          <span class="hours-time">${hour.time}</span>
+        </div>
+      `).join('');
+    }
+  } catch (error) {
+    console.error("Gagal load gaming house data:", error);
+  }
+}
+renderGamingHouse();
+
+/* ══════════════════════════════════════════════
+   9. GALLERY RENDER
 ══════════════════════════════════════════════ */
 const galleryItems = [
   { emoji: '🎮', label: 'Ranked Session', sub: 'Mobile Legends · Jan 2024', cls: 'span-2' },

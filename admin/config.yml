@@ -49,3 +49,27 @@ collections:
                     name: "type"
                     widget: "select"
                     options: ["gaming", "social", "coffee", "tournament"]
+
+  - name: "gaming_house"
+    label: "Gaming House Data"
+    files:
+      - file: "assets/data/gaming_house.json"
+        name: "gh_info"
+        label: "Info Gaming House"
+        description: "Atur alamat, fasilitas, dan jam operasional markas"
+        fields:
+          - {label: "Nama Tempat", name: "name", widget: "string"}
+          - {label: "Alamat Lengkap", name: "address", widget: "string"}
+          - name: "features"
+            label: "Daftar Fasilitas"
+            widget: "list"
+            fields:
+              - {label: "Ikon (Emoji)", name: "icon", widget: "string"}
+              - {label: "Judul Fasilitas", name: "title", widget: "string"}
+              - {label: "Deskripsi", name: "desc", widget: "string"}
+          - name: "hours"
+            label: "Jam Operasional"
+            widget: "list"
+            fields:
+              - {label: "Hari", name: "day", widget: "string"}
+              - {label: "Jam Buka - Tutup", name: "time", widget: "string"}
