@@ -2,7 +2,7 @@
   "schedule": [
     {
       "day": "Senin",
-      "short": "Privat",
+      "short": "SEN",
       "events": [
         {
           "time": "13:00",
@@ -16,14 +16,9 @@
       "short": "SEL",
       "events": [
         {
-          "time": "15:00",
-          "label": "Latihan Aim",
-          "type": "gaming"
-        },
-        {
           "time": "19:00",
-          "label": "Review Gameplay",
-          "type": "gaming"
+          "label": "Rapat Anggota",
+          "type": "social"
         }
       ]
     },
