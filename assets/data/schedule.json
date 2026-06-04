@@ -81,12 +81,12 @@
         },
         {
           "time": "13:00",
-          "label": "Turnamen Mini",
+          "label": "Chess Tournament",
           "type": "tournament"
         },
         {
           "time": "19:00",
-          "label": "Gathering",
+          "label": "Gathering Anggota",
           "type": "social"
         }
       ]
@@ -96,18 +96,18 @@
       "short": "MIN",
       "events": [
         {
-          "time": "11:00",
-          "label": "Brunch & Game",
-          "type": "coffee"
+          "time": "10:00",
+          "label": "Open House GH",
+          "type": "social"
         },
         {
-          "time": "14:00",
-          "label": "Turnamen Online",
-          "type": "tournament"
+          "time": "13:00",
+          "label": "Gathering Anggota",
+          "type": "social"
         },
         {
           "time": "20:00",
-          "label": "Review Week",
+          "label": "Evaluasi Mingguan",
           "type": "social"
         }
       ]
