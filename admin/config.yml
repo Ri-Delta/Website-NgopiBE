@@ -73,3 +73,31 @@ collections:
             fields:
               - {label: "Hari", name: "day", widget: "string"}
               - {label: "Jam Buka - Tutup", name: "time", widget: "string"}
+
+  - name: "gallery"
+    label: "Gallery Data"
+    files:
+      - file: "assets/data/gallery.json"
+        name: "gallery_list"
+        label: "Galeri Moment NgopiBE"
+        description: "Atur foto dan kegiatan galeri"
+        fields:
+          - name: "gallery"
+            label: "Daftar Moment"
+            widget: "list"
+            fields:
+              - {label: "Judul Kegiatan", name: "label", widget: "string"}
+              - {label: "Keterangan Singkat (Deskripsi)", name: "sub", widget: "string"}
+              - {label: "Ikon (Emoji)", name: "emoji", widget: "string", required: false}
+              - {label: "Upload Foto Asli (Opsional)", name: "src", widget: "image", required: false}
+              - label: "Ukuran Kotak Galeri"
+                name: "cls"
+                widget: "select"
+                options:
+                  - label: "Normal (Kecil)"
+                    value: ""
+                  - label: "Lebar ke Samping"
+                    value: "span-2"
+                  - label: "Panjang ke Bawah"
+                    value: "span-row"
+                default: ""

@@ -290,38 +290,35 @@ renderGamingHouse();
 /* ══════════════════════════════════════════════
    9. GALLERY RENDER
 ══════════════════════════════════════════════ */
-const galleryItems = [
-  { emoji: '🎮', label: 'Ranked Session', sub: 'Mobile Legends · Jan 2024', cls: 'span-2' },
-  { emoji: '☕', label: 'Ngopi Malam', sub: 'GH NgopiBE · Dec 2023', cls: '' },
-  { emoji: '🏆', label: 'Juara Turnamen', sub: 'Lokal Cup · Mar 2024', cls: 'span-row' },
-  { emoji: '🎬', label: 'Movie Night', sub: 'Nobar · Rutin', cls: '' },
-  { emoji: '🎯', label: 'Latihan Aim', sub: 'CS2 Workshop · Feb 2024', cls: '' },
-  { emoji: '🔥', label: 'War Malam', sub: 'Squad Match · Feb 2024', cls: '' },
-  { emoji: '🤝', label: 'Gathering Squad', sub: 'Bulanan · Apr 2024', cls: 'span-2' },
-  { src: 'assets/images/coffee-vibes.png', label: 'Coffee & Game', sub: 'GH NgopiBE · Rutin', cls: '' },
-  { emoji: '🍕', label: 'Makan Bareng', sub: 'Syukuran · Mei 2024', cls: '' },
-];
-
-function renderGallery() {
+async function renderGallery() {
   const grid = $('#gallery-grid');
   if (!grid) return;
-  grid.innerHTML = galleryItems.map((item, i) => `
-    <div class="gallery-item ${item.cls || ''} reveal" id="gallery-item-${i + 1}" style="transition-delay:${i * 0.08}s">
-      ${item.src
-        ? `<img src="${item.src}" alt="${item.label}" class="gallery-img" loading="lazy" />`
-        : `<div class="gallery-placeholder">${item.emoji}<span style="font-size:0.75rem;color:#7b90a8;">${item.label}</span></div>`
-      }
-      <div class="gallery-overlay">
-        <div class="gallery-label">${item.emoji} ${item.label}</div>
-        <div class="gallery-sub">${item.sub}</div>
-      </div>
-    </div>
-  `).join('');
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  $$('#gallery-grid .reveal').forEach(el => observer.observe(el));
+  try {
+    const res = await fetch('assets/data/gallery.json');
+    const data = await res.json();
+    const galleryItems = data.gallery || [];
+
+    grid.innerHTML = galleryItems.map((item, i) => `
+      <div class="gallery-item ${item.cls || ''} reveal" id="gallery-item-${i + 1}" style="transition-delay:${i * 0.08}s">
+        ${item.src
+          ? `<img src="${item.src}" alt="${item.label}" class="gallery-img" loading="lazy" />`
+          : `<div class="gallery-placeholder">${item.emoji || ''}<span style="font-size:0.75rem;color:#7b90a8;">${item.label}</span></div>`
+        }
+        <div class="gallery-overlay">
+          <div class="gallery-label">${item.emoji || ''} ${item.label}</div>
+          <div class="gallery-sub">${item.sub}</div>
+        </div>
+      </div>
+    `).join('');
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    $$('#gallery-grid .reveal').forEach(el => observer.observe(el));
+  } catch (error) {
+    console.error("Gagal load gallery data:", error);
+  }
 }
 renderGallery();
 
