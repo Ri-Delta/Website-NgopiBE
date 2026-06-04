@@ -236,6 +236,10 @@ async function renderSchedule() {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.1 });
   $$('#schedule-week .reveal').forEach(el => observer.observe(el));
+  } catch (error) {
+    console.error("Gagal load schedule data:", error);
+    container.innerHTML = '<div style="color:red;">Gagal memuat data jadwal. Pastikan file schedule.json tersedia.</div>';
+  }
 }
 renderSchedule();
 
