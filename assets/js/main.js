@@ -128,8 +128,6 @@ function animateCounters() {
     setTimeout(update, 1400);
   });
 }
-animateCounters();
-
 
 /* ══════════════════════════════════════════════
    5. SCROLL REVEAL
@@ -166,22 +164,37 @@ initScrollReveal();
    6. MEMBERS DATA & RENDER
 ══════════════════════════════════════════════ */
 const membersData = [
-  { name: 'Rizky Pratama',   ign: 'RIZY',    game: 'Mobile Legends', emoji: '🐉', online: true  },
-  { name: 'Bagas Nugraha',   ign: 'BAGA',    game: 'Free Fire',      emoji: '🔥', online: true  },
-  { name: 'Evan Santoso',    ign: 'EVN',     game: 'Genshin Impact', emoji: '⚔️', online: false },
-  { name: 'Dian Ramadhan',   ign: 'D1AN',    game: 'PUBG Mobile',    emoji: '🎯', online: true  },
-  { name: 'Farhan Ikhsanto', ign: 'FRH4N',   game: 'Valorant',       emoji: '💀', online: true  },
-  { name: 'Gilang Septian',  ign: 'GL4NG',   game: 'Mobile Legends', emoji: '⚡', online: false },
-  { name: 'Hendra Wijaya',   ign: 'H3NDR4',  game: 'CS2',            emoji: '💣', online: true  },
-  { name: 'Irfan Maulana',   ign: 'IRPH4N',  game: 'Free Fire',      emoji: '🦅', online: false },
-  { name: 'Joko Santoso',    ign: 'J0K0',    game: 'PUBG Mobile',    emoji: '🐻', online: true  },
-  { name: 'Kevin Anggara',   ign: 'KVN99',   game: 'Valorant',       emoji: '🎪', online: true  },
-  { name: 'Lutfi Hakim',     ign: 'L3THAL',  game: 'Mobile Legends', emoji: '🌊', online: false },
-  { name: 'Maulana Yusuf',   ign: 'M4UL',    game: 'Genshin Impact', emoji: '🌸', online: true  },
+  { name: 'Ri',                ign: 'RI',      game: 'Winamp',         emoji: '🌙', online: true },
+  { name: 'anakku.',           ign: 'ANAK',    game: 'PUBG Mobile',    emoji: '👶', online: false },
+  { name: 'Astray',            ign: 'ASTR',    game: 'Valorant',       emoji: '☄️', online: false },
+  { name: 'BodyGuard',         ign: 'GUARD',   game: 'CS2',            emoji: '🛡️', online: true },
+  { name: 'Depuran',           ign: 'DEPU',    game: 'Mobile Legends', emoji: '🌀', online: true },
+  { name: 'hyas',              ign: 'HYAS',    game: 'Genshin Impact', emoji: '✨', online: false },
+  { name: 'najel',             ign: 'NJL',     game: 'Free Fire',      emoji: '🌸', online: true },
+  { name: 'Nandaa',            ign: 'NAND',    game: 'Valorant',       emoji: '🎮', online: false },
+  { name: 'nandaaa',           ign: 'NND3',    game: 'Mobile Legends', emoji: '🌟', online: true },
+  { name: 'Ridwan',            ign: 'RDWN',    game: 'Efootball',      emoji: '⚽', online: false },
+  { name: 'The beast',         ign: 'BEAST',   game: 'PUBG Mobile',    emoji: '🦍', online: true },
+  { name: 'Veronical Crystal', ign: 'VERO',    game: 'Genshin Impact', emoji: '💎', online: false },
+  { name: 'Vlnc',              ign: 'VLNC',    game: 'CS2',            emoji: '🎯', online: true },
+  { name: 'Vsco',              ign: 'VSCO',    game: 'Valorant',       emoji: '📸', online: false },
+  { name: 'yallfy',            ign: 'YALL',    game: 'Chess',          emoji: '⚡', online: true },
+  { name: 'Yeosha',            ign: 'YEO',     game: 'Mobile Legends', emoji: '🦋', online: false },
+  { name: 'Yoru',              ign: 'YORU',    game: 'Valorant',       emoji: '🥷', online: true },
+  { name: '시트라',             ign: 'CITRA',   game: 'Genshin Impact', emoji: '🌙', online: false },
 ];
 
 function renderMembers() {
   const grid = $('#members-grid');
+  
+  // Update Hero Member Count dynamically
+  const heroMemberCount = $('#hero-member-count');
+  if (heroMemberCount) {
+    heroMemberCount.dataset.target = membersData.length;
+  }
+  // Call animation after target is set
+  animateCounters();
+
   if (!grid) return;
   grid.innerHTML = membersData.map((m, i) => `
     <div class="member-card reveal reveal-delay-${(i % 3) + 1}" id="member-card-${i + 1}" style="transition-delay:${i * 0.05}s">
@@ -423,3 +436,30 @@ window.addEventListener('load', () => {
 });
 
 console.log('%c☕ NgopiBE — Ngopi, Gaming, Nongkrong! 🔥', 'background:#080c10;color:#34d399;font-size:16px;font-weight:bold;padding:8px 16px;border-radius:8px;border:1px solid #34d399;');
+
+/* ══════════════════════════════════════════════
+   16. DISCORD REAL-TIME STATS
+══════════════════════════════════════════════ */
+async function fetchDiscordStats() {
+  const memberEl = $('#dc-members');
+  const onlineEl = $('#dc-online');
+  if (!memberEl || !onlineEl) return;
+
+  try {
+    // Discord invite code from your link
+    const inviteCode = 'YMsmjPGB'; 
+    const response = await fetch(`https://discord.com/api/invites/${inviteCode}?with_counts=true`);
+    const data = await response.json();
+
+    if (data.approximate_member_count !== undefined) {
+      memberEl.textContent = data.approximate_member_count;
+    }
+    if (data.approximate_presence_count !== undefined) {
+      onlineEl.innerHTML = `🟢 ${data.approximate_presence_count}`;
+    }
+  } catch (error) {
+    console.error("Gagal mengambil data Discord:", error);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', fetchDiscordStats);

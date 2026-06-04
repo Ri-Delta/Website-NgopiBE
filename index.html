@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description"
     content="NgopiBE — Tempat tongkrongan, gaming house, dan komunitas terbaik. Ngopi, main, hangout bareng!" />
-  <title>NgopiBE | Ngopi Bareng Esport</title>
+  <title>NgopiBE | Ngopi Bad Enemies</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -90,8 +90,8 @@
         <div class="hero-big-number" aria-hidden="true">BE</div>
         <h1 class="hero-main-text">
           <span class="hmt-line hmt-top">NGOPI</span>
-          <span class="hmt-line hmt-accent">BARENG</span>
-          <span class="hmt-line hmt-bottom">ESPORT</span>
+          <span class="hmt-line hmt-accent">BAD</span>
+          <span class="hmt-line hmt-bottom">ENEMIES</span>
         </h1>
       </div>
 
@@ -116,7 +116,7 @@
     <div class="hero-bottom-bar" id="hero-bottom-bar">
       <div class="hbb-left">
         <div class="hbb-stat">
-          <span class="hbb-num" data-target="12">0</span>
+          <span class="hbb-num" id="hero-member-count" data-target="12">0</span>
           <span class="hbb-lbl">Member</span>
         </div>
         <div class="hbb-divider"></div>
@@ -204,19 +204,20 @@
       <div class="founders-grid" id="founders-grid">
 
         <div class="founder-card" id="founder-card-1">
+          <div class="founder-badge-top">⭐ FOUNDER</div>
           <div class="founder-card-inner">
             <div class="founder-img-wrap">
               <img src="assets/images/founder1.png" alt="Founder 1 NgopiBE" class="founder-img" />
               <div class="founder-glow"></div>
             </div>
             <div class="founder-rank">Founder #01</div>
-            <h3 class="founder-name">Rizky "RIZY" Pratama</h3>
+            <h3 class="founder-name">Yall "Vins" Ramadhani</h3>
             <p class="founder-role">CEO & Main Fragger</p>
-            <p class="founder-bio">Otak di balik NgopiBE. Kalo ada masalah, Rizy yang nyariin solusinya sambil ngopi.
+            <p class="founder-bio">Otak di balik NgopiBE. Kalo ada masalah, Yall yang nyariin solusinya sambil ngopi.
             </p>
             <div class="founder-games">
               <span class="game-tag">Mobile Legends</span>
-              <span class="game-tag">PUBG</span>
+              <span class="game-tag">Chess</span>
             </div>
           </div>
         </div>
@@ -229,30 +230,31 @@
               <div class="founder-glow"></div>
             </div>
             <div class="founder-rank">Founder #02</div>
-            <h3 class="founder-name">Bagas "BAGA" Nugraha</h3>
-            <p class="founder-role">Strategy Lead & IGL</p>
-            <p class="founder-bio">Jago nge-strategi, baik di game maupun urusan tongkrongan. Semua plan dari dia.</p>
+            <h3 class="founder-name">Bintang "Ri" Naufal</h3>
+            <p class="founder-role">Tech & Support Lead</p>
+            <p class="founder-bio">Yang ngurusin semua hal teknis, dari WiFi GH sampe bikin website ini. Diem tapi
+              produktif.</p>
             <div class="founder-games">
-              <span class="game-tag">Free Fire</span>
+              <span class="game-tag">Mobile Legends</span>
               <span class="game-tag">Valorant</span>
             </div>
           </div>
         </div>
 
         <div class="founder-card" id="founder-card-3">
+          <div class="founder-badge-top">⭐ CO-FOUNDER</div>
           <div class="founder-card-inner">
             <div class="founder-img-wrap">
               <img src="assets/images/founder3.png" alt="Founder 3 NgopiBE" class="founder-img" />
               <div class="founder-glow"></div>
             </div>
             <div class="founder-rank">Founder #03</div>
-            <h3 class="founder-name">Evan "EVN" Santoso</h3>
-            <p class="founder-role">Tech & Support Lead</p>
-            <p class="founder-bio">Yang ngurusin semua hal teknis, dari WiFi GH sampe bikin website ini. Diem tapi
-              produktif.</p>
+            <h3 class="founder-name">Depran "Depuran" Abdillah</h3>
+            <p class="founder-role">Strategy Lead & IGL</p>
+            <p class="founder-bio">Jago nge-strategi, baik di game maupun urusan tongkrongan. Semua plan dari dia.</p>
             <div class="founder-games">
-              <span class="game-tag">Genshin Impact</span>
-              <span class="game-tag">CS2</span>
+              <span class="game-tag">Mobile Legends</span>
+              <span class="game-tag">Efootball</span>
             </div>
           </div>
         </div>
@@ -402,7 +404,7 @@
               turnamen terbaru. Join sekarang dan dapet role Member!</p>
             <div class="social-stats">
               <div class="sstat-item">
-                <span class="sstat-num">247</span>
+                <span class="sstat-num" id="dc-members">...</span>
                 <span class="sstat-lbl">Members</span>
               </div>
               <div class="sstat-item">
@@ -410,12 +412,12 @@
                 <span class="sstat-lbl">Channels</span>
               </div>
               <div class="sstat-item">
-                <span class="sstat-num">🟢</span>
+                <span class="sstat-num" id="dc-online">...</span>
                 <span class="sstat-lbl">Online</span>
               </div>
             </div>
           </div>
-          <a href="https://discord.gg/ngopibe" target="_blank" rel="noopener" id="btn-discord"
+          <a href="https://discord.gg/YMsmjPGB" target="_blank" rel="noopener" id="btn-discord"
             class="social-cta-btn discord-btn">
             <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
               <path
@@ -436,7 +438,7 @@
             </div>
             <div class="social-platform-info">
               <span class="platform-name">Instagram</span>
-              <span class="platform-handle">@ngopibe_gg</span>
+              <span class="platform-handle">@ngopibe</span>
             </div>
           </div>
           <div class="social-card-body">
@@ -457,8 +459,8 @@
               </div>
             </div>
           </div>
-          <a href="https://instagram.com/ngopibe_gg" target="_blank" rel="noopener" id="btn-instagram"
-            class="social-cta-btn instagram-btn">
+          <a href="https://www.instagram.com/ngopibe/?utm_source=ig_web_button_share_sheet" target="_blank"
+            rel="noopener" id="btn-instagram" class="social-cta-btn instagram-btn">
             <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
               <path
                 d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
@@ -564,15 +566,15 @@
           <div class="footer-logo">☕ NgopiBE</div>
           <p>Ngopi, Gaming, Nongkrong.<br />Satu squad, satu rumah.</p>
           <div class="footer-socials">
-            <a href="https://discord.gg/ngopibe" target="_blank" rel="noopener" id="footer-dc" class="social-link"
+            <a href="https://discord.gg/YMsmjPGB" target="_blank" rel="noopener" id="footer-dc" class="social-link"
               aria-label="Discord">
               <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
                 <path
                   d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057 19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028 14.09 14.09 0 0 0 1.226-1.994.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z" />
               </svg>
             </a>
-            <a href="https://instagram.com/ngopibe_gg" target="_blank" rel="noopener" id="footer-ig" class="social-link"
-              aria-label="Instagram">
+            <a href="https://www.instagram.com/ngopibe/?utm_source=ig_web_button_share_sheet" target="_blank"
+              rel="noopener" id="footer-ig" class="social-link" aria-label="Instagram">
               <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
                 <path
                   d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
