@@ -1,54 +1,120 @@
 {
   "schedule": [
     {
-      "day": "Senin", "short": "SEN",
+      "day": "Senin",
+      "short": "SEN",
       "events": [
-        { "time": "16:00", "label": "Ranked Session", "type": "gaming" },
-        { "time": "20:00", "label": "Ngopi Bareng", "type": "coffee" }
+        {
+          "time": "20:01",
+          "label": "Ngopi Bareng",
+          "type": "social"
+        }
       ]
     },
     {
-      "day": "Selasa", "short": "SEL",
+      "day": "Selasa",
+      "short": "SEL",
       "events": [
-        { "time": "15:00", "label": "Latihan Aim", "type": "gaming" },
-        { "time": "19:00", "label": "Review Gameplay", "type": "gaming" }
+        {
+          "time": "15:00",
+          "label": "Latihan Aim",
+          "type": "gaming"
+        },
+        {
+          "time": "19:00",
+          "label": "Review Gameplay",
+          "type": "gaming"
+        }
       ]
     },
     {
-      "day": "Rabu", "short": "RAB",
+      "day": "Rabu",
+      "short": "RAB",
       "events": [
-        { "time": "16:00", "label": "Scrim Internal", "type": "gaming" },
-        { "time": "21:00", "label": "Diskusi Strategi", "type": "social" }
+        {
+          "time": "16:00",
+          "label": "Scrim Internal",
+          "type": "gaming"
+        },
+        {
+          "time": "21:00",
+          "label": "Diskusi Strategi",
+          "type": "social"
+        }
       ]
     },
     {
-      "day": "Kamis", "short": "KAM",
+      "day": "Kamis",
+      "short": "KAM",
       "events": [
-        { "time": "15:00", "label": "Free Play", "type": "gaming" },
-        { "time": "20:00", "label": "Nongkrong GH", "type": "social" }
+        {
+          "time": "15:00",
+          "label": "Free Play",
+          "type": "gaming"
+        },
+        {
+          "time": "20:00",
+          "label": "Nongkrong GH",
+          "type": "social"
+        }
       ]
     },
     {
-      "day": "Jum'at", "short": "JUM",
+      "day": "Jum'at",
+      "short": "JUM",
       "events": [
-        { "time": "18:00", "label": "War Friday", "type": "tournament" },
-        { "time": "22:00", "label": "Ngopi Malam", "type": "coffee" }
+        {
+          "time": "18:00",
+          "label": "War Friday",
+          "type": "tournament"
+        },
+        {
+          "time": "22:00",
+          "label": "Ngopi Malam",
+          "type": "coffee"
+        }
       ]
     },
     {
-      "day": "Sabtu", "short": "SAB",
+      "day": "Sabtu",
+      "short": "SAB",
       "events": [
-        { "time": "10:00", "label": "Open House GH", "type": "social" },
-        { "time": "13:00", "label": "Turnamen Mini", "type": "tournament" },
-        { "time": "19:00", "label": "Gathering", "type": "social" }
+        {
+          "time": "10:00",
+          "label": "Open House GH",
+          "type": "social"
+        },
+        {
+          "time": "13:00",
+          "label": "Turnamen Mini",
+          "type": "tournament"
+        },
+        {
+          "time": "19:00",
+          "label": "Gathering",
+          "type": "social"
+        }
       ]
     },
     {
-      "day": "Minggu", "short": "MIN",
+      "day": "Minggu",
+      "short": "MIN",
       "events": [
-        { "time": "11:00", "label": "Brunch & Game", "type": "coffee" },
-        { "time": "14:00", "label": "Turnamen Online", "type": "tournament" },
-        { "time": "20:00", "label": "Review Week", "type": "social" }
+        {
+          "time": "11:00",
+          "label": "Brunch & Game",
+          "type": "coffee"
+        },
+        {
+          "time": "14:00",
+          "label": "Turnamen Online",
+          "type": "tournament"
+        },
+        {
+          "time": "20:00",
+          "label": "Review Week",
+          "type": "social"
+        }
       ]
     }
   ]
