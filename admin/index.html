@@ -4,13 +4,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager - NgopiBE</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
-  <div id="nc-root">Loading CMS... Jika terus tertahan di sini, periksa koneksi internet Anda.</div>
-  <!-- Script removed to avoid conflicts -->
+  <div id="nc-root">Loading CMS...</div>
 
-  <!-- Include the script that builds the page and powers Decap CMS -->
+  <!-- Load Netlify Identity widget first -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+  <!-- Set the Netlify site URL before CMS loads -->
+  <script>
+    window.netlifyIdentity && window.netlifyIdentity.init({
+      APIUrl: "https://webngopibe.netlify.app/.netlify/identity"
+    });
+  </script>
+
+  <!-- Load Decap CMS -->
   <script src="https://cdn.jsdelivr.net/npm/decap-cms@3.1.2/dist/decap-cms.js"></script>
 </body>
 </html>
