@@ -294,6 +294,7 @@ const galleryItems = [
   { emoji: '🎮', label: 'Ranked Session', sub: 'Mobile Legends · Jan 2024', cls: 'span-2' },
   { emoji: '☕', label: 'Ngopi Malam', sub: 'GH NgopiBE · Dec 2023', cls: '' },
   { emoji: '🏆', label: 'Juara Turnamen', sub: 'Lokal Cup · Mar 2024', cls: 'span-row' },
+  { emoji: '🎬', label: 'Movie Night', sub: 'Nobar · Rutin', cls: '' },
   { emoji: '🎯', label: 'Latihan Aim', sub: 'CS2 Workshop · Feb 2024', cls: '' },
   { emoji: '🔥', label: 'War Malam', sub: 'Squad Match · Feb 2024', cls: '' },
   { emoji: '🤝', label: 'Gathering Squad', sub: 'Bulanan · Apr 2024', cls: 'span-2' },
