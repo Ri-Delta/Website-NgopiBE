@@ -59,9 +59,9 @@
       "short": "JUM",
       "events": [
         {
-          "time": "18:00",
-          "label": "War Friday",
-          "type": "tournament"
+          "time": "19:00",
+          "label": "Scrim MLBB 1",
+          "type": "gaming"
         },
         {
           "time": "22:00",
