@@ -1,0 +1,27 @@
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+
+local_backend: true # Allow testing locally
+
+media_folder: "assets/images" # Media files will be stored in the repo under this dir
+public_folder: "assets/images" # The src attribute for uploaded media will begin with /assets/images
+
+collections:
+  - name: "members"
+    label: "Members Data"
+    files:
+      - file: "assets/data/members.json"
+        name: "member_list"
+        label: "Daftar Member NgopiBE"
+        description: "List of all members in the squad"
+        fields:
+          - name: "members"
+            label: "Members"
+            widget: "list"
+            fields:
+              - {label: "Nama", name: "name", widget: "string"}
+              - {label: "IGN", name: "ign", widget: "string"}
+              - {label: "Game Favorit", name: "game", widget: "string"}
+              - {label: "Emoji", name: "emoji", widget: "string"}
+              - {label: "Status Online?", name: "online", widget: "boolean", default: false}

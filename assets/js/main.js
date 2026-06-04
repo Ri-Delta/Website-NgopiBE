@@ -163,39 +163,23 @@ initScrollReveal();
 /* ══════════════════════════════════════════════
    6. MEMBERS DATA & RENDER
 ══════════════════════════════════════════════ */
-const membersData = [
-  { name: 'Ri',                ign: 'RI',      game: 'Winamp',         emoji: '🌙', online: true },
-  { name: 'anakku.',           ign: 'ANAK',    game: 'PUBG Mobile',    emoji: '👶', online: false },
-  { name: 'Astray',            ign: 'ASTR',    game: 'Valorant',       emoji: '☄️', online: false },
-  { name: 'BodyGuard',         ign: 'GUARD',   game: 'CS2',            emoji: '🛡️', online: true },
-  { name: 'Depuran',           ign: 'DEPU',    game: 'Mobile Legends', emoji: '🌀', online: true },
-  { name: 'hyas',              ign: 'HYAS',    game: 'Genshin Impact', emoji: '✨', online: false },
-  { name: 'najel',             ign: 'NJL',     game: 'Free Fire',      emoji: '🌸', online: true },
-  { name: 'Nandaa',            ign: 'NAND',    game: 'Valorant',       emoji: '🎮', online: false },
-  { name: 'nandaaa',           ign: 'NND3',    game: 'Mobile Legends', emoji: '🌟', online: true },
-  { name: 'Ridwan',            ign: 'RDWN',    game: 'Efootball',      emoji: '⚽', online: false },
-  { name: 'The beast',         ign: 'BEAST',   game: 'PUBG Mobile',    emoji: '🦍', online: true },
-  { name: 'Veronical Crystal', ign: 'VERO',    game: 'Genshin Impact', emoji: '💎', online: false },
-  { name: 'Vlnc',              ign: 'VLNC',    game: 'CS2',            emoji: '🎯', online: true },
-  { name: 'Vsco',              ign: 'VSCO',    game: 'Valorant',       emoji: '📸', online: false },
-  { name: 'yallfy',            ign: 'YALL',    game: 'Chess',          emoji: '⚡', online: true },
-  { name: 'Yeosha',            ign: 'YEO',     game: 'Mobile Legends', emoji: '🦋', online: false },
-  { name: 'Yoru',              ign: 'YORU',    game: 'Valorant',       emoji: '🥷', online: true },
-  { name: '시트라',             ign: 'CITRA',   game: 'Genshin Impact', emoji: '🌙', online: false },
-];
-
-function renderMembers() {
+async function renderMembers() {
   const grid = $('#members-grid');
   
-  // Update Hero Member Count dynamically
-  const heroMemberCount = $('#hero-member-count');
-  if (heroMemberCount) {
-    heroMemberCount.dataset.target = membersData.length;
-  }
-  // Call animation after target is set
-  animateCounters();
+  try {
+    const res = await fetch('assets/data/members.json');
+    const data = await res.json();
+    const membersData = data.members || [];
 
-  if (!grid) return;
+    // Update Hero Member Count dynamically
+    const heroMemberCount = $('#hero-member-count');
+    if (heroMemberCount) {
+      heroMemberCount.dataset.target = membersData.length;
+    }
+    // Call animation after target is set
+    animateCounters();
+
+    if (!grid) return;
   grid.innerHTML = membersData.map((m, i) => `
     <div class="member-card reveal reveal-delay-${(i % 3) + 1}" id="member-card-${i + 1}" style="transition-delay:${i * 0.05}s">
       <div class="member-avatar">${m.emoji}</div>
@@ -210,6 +194,11 @@ function renderMembers() {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.1 });
   $$('#members-grid .reveal').forEach(el => observer.observe(el));
+  } catch (error) {
+    console.error("Gagal load members data:", error);
+    if (!grid) return;
+    grid.innerHTML = '<div style="color:red;">Gagal memuat data member. Pastikan file members.json tersedia.</div>';
+  }
 }
 renderMembers();
 
