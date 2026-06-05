@@ -708,8 +708,8 @@ cite { color: var(--clr-green); font-size: 0.85rem; font-style: normal; letter-s
   align-items: stretch;
 }
 .founder-card {
-  background: var(--clr-panel);
-  border: 1px solid var(--clr-border);
+  background: linear-gradient(160deg, rgba(52,211,153,0.08) 0%, var(--clr-panel) 40%);
+  border: 1px solid rgba(52,211,153,0.4);
   border-radius: var(--radius-lg);
   padding: 36px 24px;
   text-align: center;
@@ -727,14 +727,8 @@ cite { color: var(--clr-green); font-size: 0.85rem; font-style: normal; letter-s
   opacity: 0;
   transition: var(--transition);
 }
-.founder-card:hover { transform: translateY(-12px); border-color: rgba(52,211,153,0.35); box-shadow: var(--shadow-glow); }
+.founder-card:hover { transform: translateY(-12px); border-color: rgba(52,211,153,0.6); box-shadow: var(--shadow-glow); }
 .founder-card:hover::before { opacity: 1; }
-.founder-card.featured {
-  border-color: rgba(52,211,153,0.4);
-  background: linear-gradient(160deg, rgba(52,211,153,0.08) 0%, var(--clr-panel) 40%);
-  transform: scale(1.04);
-}
-.founder-card.featured:hover { transform: scale(1.04) translateY(-12px); }
 .founder-badge-top {
   position: absolute;
   top: 16px; left: 50%;
