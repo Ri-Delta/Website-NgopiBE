@@ -11,7 +11,7 @@
       "emoji": "🤝",
       "label": "Gathering",
       "sub": "Kumpuran keseruan",
-      "cls": "span-2",
+      "cls": "",
       "src": "assets/images/coffee-vibes.png"
     },
     {
@@ -30,7 +30,7 @@
       "emoji": "🏠",
       "label": "Gaming House",
       "sub": "Fasilitas",
-      "cls": "span-row",
+      "cls": "",
       "src": "assets/images/gh-location.png"
     },
     {
