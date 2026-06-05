@@ -391,14 +391,58 @@ $$('.nav-link').forEach(link => {
 });
 
 /* ══════════════════════════════════════════════
-   13. GALLERY ITEM CLICK (lightbox placeholder)
+   13. GALLERY ITEM CLICK (LIGHTBOX)
 ══════════════════════════════════════════════ */
-document.addEventListener('click', e => {
-  const item = e.target.closest('.gallery-item');
-  if (!item) return;
-  const label = item.querySelector('.gallery-label');
-  if (label) showToast(`📸 ${label.textContent.trim()}`);
-});
+const lightbox = $('#lightbox-modal');
+const lightboxImg = $('#lightbox-img');
+const lightboxClose = $('.lightbox-close');
+
+if (lightbox && lightboxImg && lightboxClose) {
+  // Show lightbox when clicking a gallery item
+  document.addEventListener('click', e => {
+    const item = e.target.closest('.gallery-item');
+    if (!item) return;
+
+    // Check if the item contains an actual image
+    const img = item.querySelector('img.gallery-img');
+    if (img) {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt || 'Gallery Image';
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent scrolling
+    } else {
+      // If no image (just emoji), just show toast like before
+      const label = item.querySelector('.gallery-label');
+      if (label) showToast(`📸 ${label.textContent.trim()}`);
+    }
+  });
+
+  // Close lightbox when clicking the X button
+  lightboxClose.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+    // Clear image source after animation to prevent flashing old image next time
+    setTimeout(() => { lightboxImg.src = ''; }, 300);
+  });
+
+  // Close lightbox when clicking outside the image
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      setTimeout(() => { lightboxImg.src = ''; }, 300);
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+      setTimeout(() => { lightboxImg.src = ''; }, 300);
+    }
+  });
+}
 
 /* ══════════════════════════════════════════════
    14. GLITCH EFFECT ON LOGO

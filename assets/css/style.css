@@ -1505,6 +1505,58 @@ cite { color: var(--clr-green); font-size: 0.85rem; font-style: normal; letter-s
 #footer-tw:hover { background: rgba(255,255,255,0.08); border-color: #fff; color: #fff; }
 
 /* ══════════════════════════════════════════════
+   LIGHTBOX (POP-UP GALLERY)
+══════════════════════════════════════════════ */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(8, 12, 16, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.lightbox.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+.lightbox-content {
+  max-width: 90%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  transform: scale(0.9);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.lightbox.active .lightbox-content {
+  transform: scale(1);
+}
+.lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: var(--clr-white);
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 10000;
+}
+.lightbox-close:hover {
+  color: var(--clr-green);
+  transform: scale(1.1);
+}
+
+/* ══════════════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════════════ */
 @media (max-width: 1024px) {
