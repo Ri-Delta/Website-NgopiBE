@@ -10,29 +10,60 @@ const $ = (sel, ctx = document) => ctx.querySelector(sel);
 const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
 /* ══════════════════════════════════════════════
-   1. CURSOR GLOW & HERO PARALLAX
+   1. MAGNETIC CURSOR & HERO PARALLAX
 ══════════════════════════════════════════════ */
-const cursorGlow = $('#cursor-glow');
+const cursorDot = $('#cursor-dot');
+const cursorFollower = $('#cursor-follower');
 const heroCharWrap = $('#hero-char-wrap');
 const heroTitleWrap = $('#hero-main-title');
 
-document.addEventListener('mousemove', e => {
-  if (cursorGlow) {
-    cursorGlow.style.left = e.clientX + 'px';
-    cursorGlow.style.top  = e.clientY + 'px';
-  }
-  
-  if (window.innerWidth > 768) {
-    const x = (e.clientX / window.innerWidth - 0.5) * 30;
-    const y = (e.clientY / window.innerHeight - 0.5) * 30;
+let mouseX = 0, mouseY = 0;
+let followerX = 0, followerY = 0;
+
+if (cursorDot && cursorFollower) {
+  document.addEventListener('mousemove', e => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
     
-    if (heroCharWrap) heroCharWrap.style.transform = `translateX(-50%) translate(${x * -1}px, ${y * -1}px)`;
-    if (heroTitleWrap) heroTitleWrap.style.transform = `translate(${x * 0.5}px, ${y * 0.5}px)`;
-  } else {
-    if (heroCharWrap) heroCharWrap.style.transform = `translateX(-50%)`;
-    if (heroTitleWrap) heroTitleWrap.style.transform = '';
+    // Dot instantly follows mouse
+    cursorDot.style.left = mouseX + 'px';
+    cursorDot.style.top = mouseY + 'px';
+    
+    // Parallax
+    if (window.innerWidth > 768) {
+      const x = (mouseX / window.innerWidth - 0.5) * 30;
+      const y = (mouseY / window.innerHeight - 0.5) * 30;
+      if (heroCharWrap) heroCharWrap.style.transform = `translateX(-50%) translate(${x * -1}px, ${y * -1}px)`;
+      if (heroTitleWrap) heroTitleWrap.style.transform = `translate(${x * 0.5}px, ${y * 0.5}px)`;
+    } else {
+      if (heroCharWrap) heroCharWrap.style.transform = `translateX(-50%)`;
+      if (heroTitleWrap) heroTitleWrap.style.transform = '';
+    }
+  });
+
+  // Follower uses Lerp for smooth magnetic effect
+  function loop() {
+    followerX += (mouseX - followerX) * 0.15;
+    followerY += (mouseY - followerY) * 0.15;
+    cursorFollower.style.left = followerX + 'px';
+    cursorFollower.style.top = followerY + 'px';
+    requestAnimationFrame(loop);
   }
-});
+  loop();
+
+  // Magnetic Hover Effect on Clickables
+  const clickables = document.querySelectorAll('a, button, .gallery-item, .social-card');
+  clickables.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursorDot.classList.add('cursor-hover');
+      cursorFollower.classList.add('cursor-hover');
+    });
+    el.addEventListener('mouseleave', () => {
+      cursorDot.classList.remove('cursor-hover');
+      cursorFollower.classList.remove('cursor-hover');
+    });
+  });
+}
 
 /* ══════════════════════════════════════════════
    2. PARTICLE SYSTEM
