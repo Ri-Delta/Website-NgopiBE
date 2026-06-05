@@ -549,3 +549,65 @@ async function fetchDiscordStats() {
 }
 
 document.addEventListener('DOMContentLoaded', fetchDiscordStats);
+
+/* ══════════════════════════════════════════════
+   17. CUSTOM MAGNETIC CURSOR
+══════════════════════════════════════════════ */
+function initCustomCursor() {
+  const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
+  
+  // Only init on non-touch devices
+  if (isTouchDevice) return;
+
+  const dot = document.getElementById('cursor-dot');
+  const follower = document.getElementById('cursor-follower');
+  if (!dot || !follower) return;
+
+  // Add class to body to hide default cursor
+  document.body.classList.add('has-custom-cursor');
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let followerX = mouseX;
+  let followerY = mouseY;
+
+  // Update mouse coordinates
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    
+    // Dot follows instantly
+    dot.style.left = `${mouseX}px`;
+    dot.style.top = `${mouseY}px`;
+  });
+
+  // Animation loop for follower (lerp for smooth delay)
+  function renderCursor() {
+    // Lerp factor (higher = faster, lower = slower/smoother)
+    const lerpFactor = 0.15;
+    followerX += (mouseX - followerX) * lerpFactor;
+    followerY += (mouseY - followerY) * lerpFactor;
+
+    follower.style.left = `${followerX}px`;
+    follower.style.top = `${followerY}px`;
+
+    requestAnimationFrame(renderCursor);
+  }
+  requestAnimationFrame(renderCursor);
+
+  // Hover Effects
+  const hoverElements = document.querySelectorAll('a, button, .gallery-item, .founder-card, .social-card');
+  
+  hoverElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      dot.classList.add('hover-active');
+      follower.classList.add('hover-active');
+    });
+    el.addEventListener('mouseleave', () => {
+      dot.classList.remove('hover-active');
+      follower.classList.remove('hover-active');
+    });
+  });
+}
+
+document.addEventListener('DOMContentLoaded', initCustomCursor);
