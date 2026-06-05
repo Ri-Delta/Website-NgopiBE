@@ -1,11 +1,11 @@
 {
-  "name": "GH NgopiBE",
-  "address": "Jalan Jaya 7 Plaju",
+  "name": "GH NgopiBe",
+  "address": "Jalan Jaya 7, 16 Ulu, Seberang Ulu II",
   "features": [
     {
       "icon": "🖥️",
-      "title": "12 PC Gaming",
-      "desc": "Spec tinggi, FPS maximal"
+      "title": "Streaming",
+      "desc": "PC, Mic, Speaker, dan Headphone"
     },
     {
       "icon": "☕",
@@ -18,19 +18,19 @@
       "desc": "Fiber optic, zero lag"
     },
     {
-      "icon": "🎙️",
-      "title": "Streaming Setup",
-      "desc": "Ready untuk content creator"
+      "icon": "🏛️",
+      "title": "Ruang Rapat",
+      "desc": "Kapasitas kecil dan besar"
     }
   ],
   "hours": [
     {
       "day": "Senin – Jumat",
-      "time": "15:00 – 23:00"
+      "time": "15:00 – 23:00 WIB"
     },
     {
       "day": "Sabtu – Minggu",
-      "time": "10:00 – 02:00"
+      "time": "10:00 – 02:00 WIB"
     }
   ]
 }
