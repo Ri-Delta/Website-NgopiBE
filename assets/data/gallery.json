@@ -4,13 +4,15 @@
       "emoji": "👑",
       "label": "The Founder",
       "sub": "Pendiri Komunitas",
-      "cls": ""
+      "cls": "",
+      "src": "assets/images/founder1.png"
     },
     {
       "emoji": "🤝",
       "label": "Gathering",
       "sub": "Kumpuran keseruan",
-      "cls": ""
+      "cls": "span-2",
+      "src": "assets/images/coffee-vibes.png"
     },
     {
       "emoji": "🏆",
@@ -28,7 +30,8 @@
       "emoji": "🏠",
       "label": "Gaming House",
       "sub": "Fasilitas",
-      "cls": ""
+      "cls": "span-row",
+      "src": "assets/images/gh-location.png"
     },
     {
       "emoji": "📝",
@@ -41,7 +44,7 @@
       "label": "Kolaborasi",
       "sub": "Event",
       "cls": ""
-       },
+    },
     {
       "emoji": "❤️",
       "label": "Kegiatan Sosial",
