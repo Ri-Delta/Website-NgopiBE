@@ -705,7 +705,7 @@ cite { color: var(--clr-green); font-size: 0.85rem; font-style: normal; letter-s
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 28px;
-  align-items: start;
+  align-items: stretch;
 }
 .founder-card {
   background: var(--clr-panel);
@@ -716,6 +716,8 @@ cite { color: var(--clr-green); font-size: 0.85rem; font-style: normal; letter-s
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 .founder-card::before {
   content: '';
@@ -748,7 +750,14 @@ cite { color: var(--clr-green); font-size: 0.85rem; font-style: normal; letter-s
   border-radius: 99px;
   white-space: nowrap;
 }
-.founder-card-inner { position: relative; z-index: 1; padding-top: 16px; }
+.founder-card-inner { 
+  position: relative; 
+  z-index: 1; 
+  padding-top: 16px; 
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
 .founder-img-wrap {
   width: 120px; height: 120px;
   border-radius: 50%;
@@ -804,6 +813,7 @@ cite { color: var(--clr-green); font-size: 0.85rem; font-style: normal; letter-s
   color: var(--clr-muted);
   line-height: 1.6;
   margin-bottom: 16px;
+  flex-grow: 1;
 }
 .founder-games { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
 .game-tag {
