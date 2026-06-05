@@ -1737,9 +1737,7 @@ cite { color: var(--clr-green); font-size: 0.85rem; font-style: normal; letter-s
   body.has-custom-cursor .founder-card {
     cursor: none;
   }
-
   .cursor-dot {
-    display: block;
     position: fixed;
     top: 0; left: 0;
     width: 6px; height: 6px;
@@ -1751,7 +1749,6 @@ cite { color: var(--clr-green); font-size: 0.85rem; font-style: normal; letter-s
     transition: width 0.2s, height 0.2s, opacity 0.2s;
   }
   .cursor-follower {
-    display: block;
     position: fixed;
     top: 0; left: 0;
     width: 32px; height: 32px;

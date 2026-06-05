@@ -563,16 +563,22 @@ function initCustomCursor() {
   const follower = document.getElementById('cursor-follower');
   if (!dot || !follower) return;
 
-  // Add class to body to hide default cursor
-  document.body.classList.add('has-custom-cursor');
-
   let mouseX = window.innerWidth / 2;
   let mouseY = window.innerHeight / 2;
   let followerX = mouseX;
   let followerY = mouseY;
+  let cursorInitialized = false;
 
   // Update mouse coordinates
   window.addEventListener('mousemove', (e) => {
+    // Only show cursor if a real mousemove occurs
+    if (!cursorInitialized) {
+      document.body.classList.add('has-custom-cursor');
+      dot.style.display = 'block';
+      follower.style.display = 'block';
+      cursorInitialized = true;
+      requestAnimationFrame(renderCursor);
+    }
     mouseX = e.clientX;
     mouseY = e.clientY;
     
@@ -593,7 +599,6 @@ function initCustomCursor() {
 
     requestAnimationFrame(renderCursor);
   }
-  requestAnimationFrame(renderCursor);
 
   // Hover Effects
   const hoverElements = document.querySelectorAll('a, button, .gallery-item, .founder-card, .social-card');
