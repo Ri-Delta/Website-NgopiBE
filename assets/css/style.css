@@ -1775,9 +1775,9 @@ cite { color: var(--clr-green); font-size: 0.85rem; font-style: normal; letter-s
 }
 
 /* ══════════════════════════════════════════════
-   TOUCH RIPPLE (Mobile/Tablet)
+   TOUCH RIPPLE & HIDE CURSOR (Mobile/Tablet)
 ══════════════════════════════════════════════ */
-@media (pointer: coarse) {
+@media (pointer: coarse), (hover: none), (max-width: 1024px) {
   .touch-ripple {
     position: fixed;
     pointer-events: none;
@@ -1796,7 +1796,7 @@ cite { color: var(--clr-green); font-size: 0.85rem; font-style: normal; letter-s
     100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
   }
 
-  /* Force hide the magnetic cursor even if JS accidentally triggers it */
+  /* Force hide the magnetic cursor on anything that is mobile, tablet, or touch */
   .cursor-dot,
   .cursor-follower {
     display: none !important;

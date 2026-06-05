@@ -555,9 +555,10 @@ document.addEventListener('DOMContentLoaded', fetchDiscordStats);
 ══════════════════════════════════════════════ */
 function initCustomCursor() {
   const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
+  const isMobileSize = window.innerWidth <= 1024;
   
-  // Only init on non-touch devices
-  if (isTouchDevice) {
+  // Strict check: if it has any touch capabilities OR is a tablet/mobile size, force touch ripple instead
+  if (isTouchDevice || isMobileSize) {
     initTouchRipple();
     return;
   }
