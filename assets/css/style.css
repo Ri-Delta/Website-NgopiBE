@@ -553,7 +553,7 @@ button { cursor: none; }
 /* ── BOTTOM BAR ── */
 .hero-bottom-bar {
   position: absolute;
-  bottom: 36px;
+  bottom: 64px;
   left: 0; right: 0;
   z-index: 7;
   display: flex;
@@ -1688,7 +1688,7 @@ cite { color: var(--clr-green); font-size: 0.85rem; font-style: normal; letter-s
   .hmt-line { font-size: 3.2rem; }
   .hmt-top, .hmt-bottom { font-size: 1.4rem; }
   .hero-char-wrap { width: 240px; bottom: 190px; }
-  .hero-bottom-bar { flex-direction: column; gap: 12px; bottom: 20px; padding: 0 16px; }
+  .hero-bottom-bar { flex-direction: column; gap: 12px; bottom: 52px; padding: 0 16px; }
   .hbb-left { flex-wrap: wrap; justify-content: center; padding: 12px; gap: 12px; width: 100%; border-radius: var(--radius-md); }
   .hbb-stat { padding: 0 8px; }
   .hbb-divider { display: none; }
