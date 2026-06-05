@@ -192,7 +192,31 @@ function initScrollReveal() {
 initScrollReveal();
 
 /* ══════════════════════════════════════════════
-   6. MEMBERS DATA & RENDER
+   6. VISI MISI DATA & RENDER
+══════════════════════════════════════════════ */
+async function renderVisiMisi() {
+  const visiContent = $('#visi-content');
+  const misiList = $('#misi-list');
+  if (!visiContent || !misiList) return;
+
+  try {
+    const res = await fetch('assets/data/visimisi.json');
+    const data = await res.json();
+    
+    if (data.visi) visiContent.textContent = data.visi;
+    if (data.misi && Array.isArray(data.misi)) {
+      misiList.innerHTML = data.misi.map(m => `<li>${m}</li>`).join('');
+    }
+  } catch (error) {
+    console.error("Gagal load visi misi data:", error);
+    visiContent.textContent = "Gagal memuat visi.";
+    misiList.innerHTML = "<li>Gagal memuat misi.</li>";
+  }
+}
+renderVisiMisi();
+
+/* ══════════════════════════════════════════════
+   7. MEMBERS DATA & RENDER
 ══════════════════════════════════════════════ */
 async function renderMembers() {
   const grid = $('#members-grid');
