@@ -551,13 +551,16 @@ async function fetchDiscordStats() {
 document.addEventListener('DOMContentLoaded', fetchDiscordStats);
 
 /* ══════════════════════════════════════════════
-   17. CUSTOM MAGNETIC CURSOR
+   17. CUSTOM MAGNETIC CURSOR (Desktop only)
 ══════════════════════════════════════════════ */
 function initCustomCursor() {
   const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0);
   
   // Only init on non-touch devices
-  if (isTouchDevice) return;
+  if (isTouchDevice) {
+    initTouchRipple();
+    return;
+  }
 
   const dot = document.getElementById('cursor-dot');
   const follower = document.getElementById('cursor-follower');
@@ -613,6 +616,25 @@ function initCustomCursor() {
       follower.classList.remove('hover-active');
     });
   });
+}
+
+/* ══════════════════════════════════════════════
+   18. TOUCH RIPPLE EFFECT (Mobile/Tablet only)
+══════════════════════════════════════════════ */
+function initTouchRipple() {
+  document.addEventListener('touchstart', (e) => {
+    const touch = e.touches[0];
+    const ripple = document.createElement('div');
+    ripple.classList.add('touch-ripple');
+    ripple.style.left = `${touch.clientX}px`;
+    ripple.style.top = `${touch.clientY}px`;
+    document.body.appendChild(ripple);
+
+    // Remove ripple after animation ends
+    ripple.addEventListener('animationend', () => {
+      ripple.remove();
+    });
+  }, { passive: true });
 }
 
 document.addEventListener('DOMContentLoaded', initCustomCursor);
