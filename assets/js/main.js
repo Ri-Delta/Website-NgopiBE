@@ -423,6 +423,27 @@ async function renderGallery() {
           dot.classList.toggle('active', i === index);
         });
       });
+
+      // Auto scroll logic
+      let autoScrollInterval;
+      const startAutoScroll = () => {
+        autoScrollInterval = setInterval(() => {
+          const maxScrollLeft = carousel.scrollWidth - carousel.clientWidth;
+          // If at the end, jump back to start
+          if (carousel.scrollLeft >= maxScrollLeft - 10) {
+            carousel.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            carousel.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+          }
+        }, 3000); // 3 seconds
+      };
+      const stopAutoScroll = () => clearInterval(autoScrollInterval);
+
+      startAutoScroll();
+      item.addEventListener('mouseenter', stopAutoScroll);
+      item.addEventListener('mouseleave', startAutoScroll);
+      item.addEventListener('touchstart', stopAutoScroll, { passive: true });
+      item.addEventListener('touchend', startAutoScroll, { passive: true });
     });
 
   } catch (error) {
