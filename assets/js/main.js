@@ -354,23 +354,77 @@ async function renderGallery() {
     const data = await res.json();
     const galleryItems = data.gallery || [];
 
-    grid.innerHTML = galleryItems.map((item, i) => `
-      <div class="gallery-item ${item.cls || ''} reveal" id="gallery-item-${i + 1}" style="transition-delay:${i * 0.08}s">
-        ${item.src
-          ? `<img src="${item.src}" alt="${item.label}" class="gallery-img" loading="lazy" />`
-          : `<div class="gallery-placeholder">${item.emoji || ''}<span style="font-size:0.75rem;color:#7b90a8;">${item.label}</span></div>`
-        }
-        <div class="gallery-overlay">
-          <div class="gallery-label">${item.emoji || ''} ${item.label}</div>
-          <div class="gallery-sub">${item.sub}</div>
+    grid.innerHTML = galleryItems.map((item, i) => {
+      const hasImages = item.images && item.images.length > 0;
+      const isMulti = hasImages && item.images.length > 1;
+      
+      let mediaHtml = '';
+      if (hasImages) {
+        mediaHtml = `
+          <div class="gallery-carousel">
+            ${item.images.map(src => `<img src="${src}" alt="${item.label}" class="gallery-img" loading="lazy" />`).join('')}
+          </div>
+          ${isMulti ? `
+            <div class="carousel-nav">
+              <button class="carousel-btn prev" aria-label="Previous image">‹</button>
+              <button class="carousel-btn next" aria-label="Next image">›</button>
+            </div>
+            <div class="carousel-dots">
+              ${item.images.map((_, idx) => `<span class="dot ${idx === 0 ? 'active' : ''}"></span>`).join('')}
+            </div>
+          ` : ''}
+        `;
+      } else {
+        mediaHtml = `<div class="gallery-placeholder">${item.emoji || ''}<span style="font-size:0.75rem;color:#7b90a8;">${item.label}</span></div>`;
+      }
+
+      return `
+        <div class="gallery-item ${item.cls || ''} reveal" id="gallery-item-${i + 1}" style="transition-delay:${i * 0.08}s">
+          ${mediaHtml}
+          <div class="gallery-overlay">
+            <div class="gallery-label">${item.emoji || ''} ${item.label}</div>
+            <div class="gallery-sub">${item.sub}</div>
+          </div>
         </div>
-      </div>
-    `).join('');
+      `;
+    }).join('');
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
     }, { threshold: 0.08 });
     $$('#gallery-grid .reveal').forEach(el => observer.observe(el));
+
+    // Init carousel logic
+    $$('.gallery-item').forEach(item => {
+      const carousel = item.querySelector('.gallery-carousel');
+      if (!carousel) return;
+      
+      const prevBtn = item.querySelector('.carousel-btn.prev');
+      const nextBtn = item.querySelector('.carousel-btn.next');
+      const dots = item.querySelectorAll('.dot');
+      
+      if (!prevBtn || !nextBtn) return;
+
+      const scrollAmount = () => carousel.clientWidth;
+
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        carousel.scrollBy({ left: -scrollAmount(), behavior: 'smooth' });
+      });
+
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        carousel.scrollBy({ left: scrollAmount(), behavior: 'smooth' });
+      });
+
+      carousel.addEventListener('scroll', () => {
+        const index = Math.round(carousel.scrollLeft / scrollAmount());
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index);
+        });
+      });
+    });
+
   } catch (error) {
     console.error("Gagal load gallery data:", error);
   }

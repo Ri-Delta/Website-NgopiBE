@@ -1173,10 +1173,77 @@ cite { color: var(--clr-green); font-size: 0.85rem; font-style: normal; letter-s
   height: 200px;
   object-fit: cover;
   transition: transform 0.5s ease;
+  flex-shrink: 0;
 }
 .gallery-item.span-row .gallery-img,
 .gallery-item.span-2 .gallery-img { height: 100%; min-height: 200px; }
 .gallery-item:hover .gallery-img { transform: scale(1.06); }
+
+/* Carousel Additions */
+.gallery-carousel {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+}
+.gallery-carousel::-webkit-scrollbar { display: none; /* Chrome */ }
+.gallery-carousel .gallery-img {
+  width: 100%;
+  scroll-snap-align: start;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  left: 0; right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  z-index: 3;
+}
+.gallery-item:hover .carousel-nav { opacity: 1; }
+.carousel-btn {
+  background: rgba(8, 12, 16, 0.7);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: auto;
+  font-size: 1.2rem;
+  transition: all 0.2s;
+  backdrop-filter: blur(4px);
+}
+.carousel-btn:hover { background: var(--clr-green); color: black; border-color: transparent; }
+
+.carousel-dots {
+  position: absolute;
+  bottom: 8px;
+  left: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  z-index: 3;
+  pointer-events: none;
+}
+.carousel-dots .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  transition: background 0.3s;
+}
+.carousel-dots .dot.active { background: var(--clr-green); }
 .gallery-overlay {
   position: absolute;
   inset: 0;

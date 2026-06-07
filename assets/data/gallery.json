@@ -5,14 +5,14 @@
       "label": "The Founder",
       "sub": "Pendiri Komunitas",
       "cls": "",
-      "src": "assets/images/The Founder 1.jpg"
+      "images": ["assets/images/The Founder 1.jpg"]
     },
     {
       "emoji": "🤝",
       "label": "Gathering",
       "sub": "Kumpuan keseruan",
       "cls": "",
-      "src": "assets/images/Gathering 1.PNG"
+      "images": ["assets/images/Gathering 1.PNG"]
     },
     {
       "emoji": "🏆",
@@ -31,7 +31,7 @@
       "label": "Gaming House",
       "sub": "Fasilitas",
       "cls": "",
-      "src": "assets/images/gh-location.png"
+      "images": ["assets/images/gh-location.png"]
     },
     {
       "emoji": "📝",

@@ -89,7 +89,11 @@ collections:
               - {label: "Judul Kegiatan", name: "label", widget: "string"}
               - {label: "Keterangan Singkat (Deskripsi)", name: "sub", widget: "string"}
               - {label: "Ikon (Emoji)", name: "emoji", widget: "string", required: false}
-              - {label: "Upload Foto Asli (Opsional)", name: "src", widget: "image", required: false}
+              - label: "Upload Foto (Bisa Banyak)"
+                name: "images"
+                widget: "list"
+                required: false
+                field: {label: "Foto", name: "src", widget: "image"}
               - label: "Ukuran Kotak Galeri"
                 name: "cls"
                 widget: "select"
