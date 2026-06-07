@@ -5,7 +5,12 @@
       "label": "The Founder",
       "sub": "Pendiri Komunitas",
       "cls": "",
-      "images": ["assets/images/The Founder 1.jpg"]
+      "images": [
+        "assets/images/The Founder 1.jpg",
+        "assets/images/founder1.png",
+        "assets/images/founder2.png",
+        "assets/images/founder3.png"
+      ]
     },
     {
       "emoji": "🤝",
